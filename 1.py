@@ -1,26 +1,14 @@
-# modules
-import os
-from win10toast_click import ToastNotifier 
+def yhwg(x,y):
 
-# function 
-page_url = 'http://example.com/'
+    if x>20:
+        x-=20
+        m=x*(y*0.15)
+        m=round(m,2)
+    else:
+        m=0
+    return m
 
-def open_url():
-    try: 
-        os.system('explorer F:\\')
-        print('Opening URL...')  
-    except: 
-        print('Failed to open URL. Unsupported variable type.')
+weight=int(input("行李重量\n]"))
+price=int(input("机票价格\n]"))
 
-# initialize 
-toaster = ToastNotifier()
-
-# showcase
-toaster.show_toast(
-    "发现新硬件", # title
-    "轻点此处 来打开u盘 >>", # message 
-    icon_path=None, # 'icon_path' 
-    duration=20, # for how many seconds toast should be visible; None = leave notification in Notification Center
-    threaded=True, # True = run other code in parallel; False = code execution will wait till notification disappears 
-    callback_on_click=open_url # click notification to run function 
-    )
+print("超重量行李费用:",yhwg(weight,price)," CHN")
